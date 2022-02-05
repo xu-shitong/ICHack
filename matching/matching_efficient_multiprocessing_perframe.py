@@ -18,24 +18,25 @@ def match(song, speech):
     # speech is a pxn matrix
     # same number of columns, different number of rows
     global results
-    results = []
     output = []
+
+    pool = mp.Pool(mp.cpu_count())
+    print("CPU count = " + str(mp.cpu_count()))
 
     if len(song[0]) == len(speech[0]):
         for i in range(len(song)):
-            pool = mp.Pool(mp.cpu_count())
-            print("CPU count = " + str(mp.cpu_count()))
-            
+            results = []     
             for j in range(len(speech)):
                 pool.apply_async(mse, args=(song[i], speech[j]), callback=get_result)
-            pool.close()
-            pool.join()
             index = np.argmin(results)
-            output.append(results[index])            
+            output.append(results[index])           
         
     else:
         print("Column numbers do not match")
         exit
+    
+    pool.close()
+    pool.join()
     
     return output
 

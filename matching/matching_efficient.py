@@ -24,14 +24,14 @@ def match(song, speech):
     return output
 
 def main ():
-    # song_ex = [[1,2,3,4,5],[3,5,6,7,8]]
-    # speech_ex = [[1,2,3,4,5],[6,7,8,9,10],[3,4,6,8,9]]
+    song_ex = [[1,2,3,4,5],[3,5,6,7,8]]
+    speech_ex = [[1,2,3,4,5],[6,7,8,9,10],[3,4,6,8,9]]
     t0 = time.time()
 
-    song_ex = np.random.randint(1,100, size=(100,100))
+    # song_ex = np.random.randint(1,100, size=(100,100))
     print("song_ex = " + str(song_ex))
 
-    speech_ex = np.random.randint(1,100, size=(100,100))
+    # speech_ex = np.random.randint(1,100, size=(100,100))
     print("speech_ex = " + str(speech_ex))
 
     output = match(song_ex, speech_ex)
