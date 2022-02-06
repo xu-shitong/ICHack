@@ -1,4 +1,5 @@
 from django import forms
 
-class SongForm(forms.Form):
-    track = forms.FileField(label='Track')
+class UploadForm(forms.Form):
+    song = forms.CharField(label='Song text', widget=forms.Textarea)
+    speech = forms.CharField(label='Speech filepath')
