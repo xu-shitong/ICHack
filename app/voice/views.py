@@ -15,4 +15,5 @@ def home(request):
         print(uploaded_file.name)
         print(url)
         print(base_url)
-    return render(request, 'voice/home.html', {"file":base_url})
+        return render(request, 'voice/home.html', {"file":base_url})
+    return render(request, 'voice/home.html')
