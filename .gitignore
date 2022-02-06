@@ -1,1 +1,6 @@
 /djangobackend/
+/speech_to_text/sentences
+/speech_to_text/words
+.DS_Store
+venv
+.gitignore
