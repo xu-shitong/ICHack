@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+  ],
+  "settings": {
+    "python.autoComplete.extraPaths": [
+      "./trial.py"
+    ],
+    "python.analysis.extraPaths": [
+      "./trial.py"
+    ],
+  }
+}
