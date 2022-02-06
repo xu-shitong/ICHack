@@ -87,7 +87,11 @@
                                     <p>
                                         Let the magic begin.
                                     </p>
-                                    <button class="w-100 btn btn-sm btn-outline-primary">Convert</button>
+                                    <form method="POST" action="/convert/" >
+                                        {% csrf_token %}
+                                        <button type="submit" value="Submit" class="w-100 btn btn-sm btn-outline-primary">Convert</button>
+                                    </form>
+                                        
                                 </div>
                             </div>
                         </div>

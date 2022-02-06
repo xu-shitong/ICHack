@@ -5,6 +5,10 @@ from pydub.silence import split_on_silence
 from google.cloud import speech_v1 as speech
 from google.cloud import storage
 
+def test():
+    print("TESTING GOOD")
+    return 
+
 def split_audio_transcript_to_words(audio_path, cleandir=False):
     config = speech.RecognitionConfig(sample_rate_hertz = 48000, audio_channel_count = 2, language_code="en-US", enable_word_time_offsets=True,)
 
@@ -62,7 +66,7 @@ def speech_to_word_list(config, audio):
             end_s = word.end_time.total_seconds()
             word = word.word
             word_list.append((word, start_s, end_s))
-            #print(word, " | ", start_s, "->", end_s)
+            print(word, " | ", start_s, "->", end_s)
         return word_list
     return word_list
 
