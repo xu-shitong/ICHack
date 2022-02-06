@@ -13,11 +13,11 @@
 <body>
     <div>
 
-        <div class="px-4 py-3 my-5 text-center">
+        <div class="px-4 py-5 text-center">
             <h1 class="display-5 fw-bold">Pitch perfect? Perfect pitch!</h1>
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">
-                    Upload your favourite tune. Upload your beautiful voice. Let the magic begin.
+                    Enter your favourite tune. Upload your beautiful voice. Let the magic begin.
                 </p>
             </div>
         </div>
@@ -25,35 +25,85 @@
         <div class="container">
             <main>
                 <div class="row mb-3">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="card mb-4 rounded-3 shadow-sm">
                             <div class="card-header">
-                                <h3 class="my-0 fw-normal text-center">1. Favourite Tune 🎤</h3>
+                                <h3 class="my-0 fw-normal text-center">1. Upload</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="px-3 py-3">
+                                        <p>
+                                            Input your favourite tune. Then, upload your pretty voice, or someone
+                                            else's prettier voice.
+                                        </p>
+                                        <form method="POST" action="/uploaded/" enctype="multipart/form-data"
+                                            class="py-2">
+                                            {% csrf_token %}
+                                            {{form.as_p}}
+                                            <center>
+                                                <div class="col-md-6">
+                                                    <button type="submit" class="w-100 btn btn-sm btn-outline-primary"
+                                                        value="Submit">Upload
+                                                    </button>
+                                                </div>
+                                            </center>
+
+                                    </div>
+                                    </form>
+                                    <!-- 
+                                    <p class="mt-2">
+                                        Tune
+                                    </p>
+                                    <center>
+                                        <audio controls class="py-2" style="width: 100%">
+                                            <source src={{file_1}} type="audio/wav">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </center> -->
+
+                                    <h5 class="mt-2">
+                                        Test your speech file playback!
+                                    </h5>
+
+                                    <center>
+                                        <audio controls class="py-2" style="width: 90%">
+                                            <source src={{file_2}} type="audio/wav">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header">
+                                <h3 class="my-0 fw-normal text-center">2. Conversion</h3>
                             </div>
                             <div class="card-body">
                                 <div class="container">
                                     <p>
-                                        Chug in your favourite tune. This is what the output will attempt to resemble!
+                                        Let the magic begin.
                                     </p>
-                                    <form method="POST" enctype="multipart/form-data" class="py-2">
-                                        {% csrf_token %}
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <input type="file" accept=".wav" name="track" />
-                                            </div>
-                                            <div class="col-md-4">
-                                                <button type="submit"
-                                                    class="w-100 btn btn-sm btn-outline-primary">Upload</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <p class="mt-2">
-                                        Test your upload.
-                                    </p>
-                                    <audio controls class="py-2" style="width: 100%">
-                                        <source src={{file}} type="audio/wav">
-                                        Your browser does not support the audio element.
-                                    </audio>
+                                    <button class="w-100 btn btn-sm btn-outline-primary">Convert</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header">
+                                <h3 class="my-0 fw-normal text-center">3. Playback</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <center>
+                                        <audio controls class="py-2" style="width: 90%">
+                                            <source src={{file}} type="audio/wav">
+                                            <!-- TODO: Update file path with output file path -->
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </center>
                                 </div>
                             </div>
                         </div>
