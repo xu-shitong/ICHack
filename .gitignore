@@ -3,4 +3,5 @@
 /speech_to_text/words
 .DS_Store
 venv
-.gitignore
+/app/app/sentences
+

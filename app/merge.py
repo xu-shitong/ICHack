@@ -1,16 +1,17 @@
 from scipy.io import wavfile
-import torch
 import numpy as np
 
 PAUSE_CONST = 10000
+SAMPLE_RATE = 48000
 
 def merge(names, output_name):
+  print(names)
   result = None
   for name in names:
     if name == "pause":
       result = np.vstack([result, np.zeros((PAUSE_CONST, result.shape[1]))])
     else:
-      SAMPLE_RATE, wavefront = wavfile.read(name)
+      n, wavefront = wavfile.read(name)
       DTYPE = wavefront.dtype
       if result is None:
         result = wavefront

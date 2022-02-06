@@ -8,6 +8,9 @@ import sys
 #sys.path.append('./../../../speech_to_text/')
 sys.path.append('./../speech_to_text/')
 from Audio_into_Words import test, split_audio_transcript_to_words
+from Words_into_Audio import text_to_filepaths
+
+from merge import merge
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="./../speech_to_text/cred.json"
 abspath = os.path.abspath(os.path.join('.'))
@@ -17,7 +20,10 @@ def convert(request):
     if request.method == 'POST':
         form = ConvertForm(request.POST)
         if form.is_valid():
+
             print("trigger conversion")
+            savefile_path = 'saved.wav'
+            merge(text_to_filepaths("congratulations i'm thrilled over liberty and love."), savefile_path)
             # TODO: convert
             return render(request, 'voice/home.html', {'form': form, "file_1":"", "file_2":""})
     else:
