@@ -25,6 +25,7 @@
         <div class="container">
             <main>
                 <div class="row mb-3">
+                    <!-- 
                     <div class="col-md-4">
                         <div class="card mb-4 rounded-3 shadow-sm">
                             <div class="card-header">
@@ -35,11 +36,81 @@
                                     <p>
                                         Chug in your favourite tune. This is what the output will attempt to resemble!
                                     </p>
+                                    <form method="POST" action="/submit-song/" enctype="multipart/form-data" class="py-2">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            {{ form }}
+                                            <div class="col-md-8">
+                                                <input type="file" accept=".wav" name="track" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button type="submit"
+                                                    class="w-100 btn btn-sm btn-outline-primary">Upload</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <p class="mt-2">
+                                        Test your upload.
+                                    </p>
+                                    <audio controls class="py-2" style="width: 100%">
+                                        <source src={{file}} type="audio/wav">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header">
+                                <h3 class="my-0 fw-normal text-center">2. Song</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <p>
+                                        Insert your pretty voice. Or someone else's even beautiful voice.
+                                    </p>
                                     <form method="POST" enctype="multipart/form-data" class="py-2">
                                         {% csrf_token %}
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <input type="file" accept=".wav" name="track" />
+                                                <input type="hidden" name="type" value="speech">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button type="submit"
+                                                    class="w-100 btn btn-sm btn-outline-primary">Upload</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <p class="mt-2">
+                                        Test your upload.
+                                    </p>
+                                    <audio controls class="py-2" style="width: 100%">
+                                        <source src={{file}} type="audio/wav">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card-header">
+                                <h3 class="my-0 fw-normal text-center">3. Speech</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <p>
+                                        Let the magic begin.
+                                    </p>
+                                    <form method="POST" enctype="multipart/form-data" class="py-2">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <input type="file" accept=".wav" name="speech" />
                                             </div>
                                             <div class="col-md-4">
                                                 <button type="submit"
