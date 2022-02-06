@@ -1,1 +1,14 @@
 /djangobackend
+/app/app/__pycache__
+app/voice/migrations/__pycache__/__init__.cpython-39.pyc
+app/voice/__pycache__/views.cpython-39.pyc
+app/voice/__pycache__/urls.cpython-39.pyc
+app/voice/__pycache__/models.cpython-39.pyc
+app/voice/__pycache__/forms.cpython-39.pyc
+app/voice/__pycache__/apps.cpython-39.pyc
+app/voice/__pycache__/admin.cpython-39.pyc
+app/voice/__pycache__/__init__.cpython-39.pyc
+app/app/__pycache__/wsgi.cpython-39.pyc
+app/app/__pycache__/urls.cpython-39.pyc
+app/app/__pycache__/settings.cpython-39.pyc
+app/app/__pycache__/__init__.cpython-39.pyc
