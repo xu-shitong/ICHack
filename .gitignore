@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+/djangobackend/
+/speech_to_text/sentences
+/speech_to_text/words
+.DS_Store
+venv
+/app/app/sentences
+
+=======
 /djangobackend
 /app/app/__pycache__
 app/voice/migrations/__pycache__/__init__.cpython-39.pyc
@@ -12,3 +21,4 @@ app/app/__pycache__/wsgi.cpython-39.pyc
 app/app/__pycache__/urls.cpython-39.pyc
 app/app/__pycache__/settings.cpython-39.pyc
 app/app/__pycache__/__init__.cpython-39.pyc
+>>>>>>> f7c2d77a99c9b1bb2c1ff7c617d01c1508e7457c

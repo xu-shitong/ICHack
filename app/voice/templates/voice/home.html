@@ -86,7 +86,11 @@
                                     <p>
                                         Let the magic begin.
                                     </p>
-                                    <button class="w-100 btn btn-sm btn-outline-primary">Convert</button>
+                                    <form method="POST" action="/convert/" >
+                                        {% csrf_token %}
+                                        <button type="submit" value="Submit" class="w-100 btn btn-sm btn-outline-primary">Convert</button>
+                                    </form>
+                                        
                                 </div>
                             </div>
                         </div>
@@ -98,7 +102,8 @@
                                 <div class="container">
                                     <center>
                                         <audio controls class="py-2" style="width: 90%">
-                                            <source src='./../../../saved.wav' type="audio/wav">
+                                            <source src="./../../../saved.wav" type="audio/wav">
+                                            <!-- TODO: Update file path with output file path -->
                                             Your browser does not support the audio element.
                                         </audio>
                                     </center>
